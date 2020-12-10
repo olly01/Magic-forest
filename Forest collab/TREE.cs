@@ -6,22 +6,7 @@ namespace Forest_collab
 {
     class TREE
     {
-        private string GetType
-        {
-            get
-            {
-                int ratio = RandomNum(0, 4);
-                if (ratio == 0)
-                {
-                    return "Norway Spruce";
-                }
-                else
-                {
-                    return "Nordmann Fir";
-                }
-            }
-        }
-
+        private bool Diseased { get; set; }
         private int GetAge
         {
             get
@@ -30,28 +15,13 @@ namespace Forest_collab
                 return age;
             }
         }
-        private bool GetDiseased
-        {
-            get
-            {
-                int ratio = RandomNum(1, 200);
-                if (ratio == 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
         private bool dove { get; set; }
         private bool river { get; set; }
-        public TREE(bool _dove, bool _river)
+        public TREE(bool _dove, bool _river, bool _diseased)
         {
             dove = _dove;
             river = _river;
-
+            Diseased = _diseased;
         }
         public int RandomNum(int min, int max)
         {
