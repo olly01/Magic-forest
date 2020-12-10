@@ -4,9 +4,10 @@ using System.Text;
 
 namespace Forest_collab
 {
-    class NorwaySpruce : TREE
+    class Maple : TREE
     {
-        public NorwaySpruce(bool _diseased, bool _dove, bool _river) : base(_diseased, _dove, _river)
+
+        public Maple(bool _diseased, bool _dove, bool _river) : base(_diseased, _dove, _river)
         {
 
         }
