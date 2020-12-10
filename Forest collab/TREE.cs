@@ -69,7 +69,7 @@ namespace Forest_collab
             }
             else
             {
-                disease
+                disease = false;
             }
         }
     
