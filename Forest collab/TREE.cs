@@ -17,7 +17,7 @@ namespace Forest_collab
         {
             type = typeb();
             age = ageb();
-            diseased = _diseased;
+            diseased = diseasedb();
             dove = _dove;
             river = _river;
 
@@ -71,6 +71,7 @@ namespace Forest_collab
             {
                 disease = false;
             }
+            return disease;
         }
     
 
