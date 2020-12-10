@@ -6,7 +6,7 @@ namespace Forest_collab
 {
     class NorwaySpruce : TREE
     {
-        public NorwaySpruce(bool _diseased, bool _dove, bool _river) : base(_diseased, _dove, _river)
+        public NorwaySpruce(bool _dove, bool _river) : base(_dove, _river)
         {
 
         }

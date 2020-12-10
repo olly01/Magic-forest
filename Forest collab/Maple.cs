@@ -6,10 +6,10 @@ namespace Forest_collab
 {
     class Maple : TREE
     {
-
-        public Maple(bool _diseased, bool _dove, bool _river) : base(_diseased, _dove, _river)
+        public int AmountMapleTapped { get; set; }
+        public Maple(bool _dove, bool _river, int _AmountMapleTapped) : base(_dove, _river)
         {
-
+            AmountMapleTapped = _AmountMapleTapped;
         }
     }
 }

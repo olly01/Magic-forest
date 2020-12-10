@@ -6,74 +6,57 @@ namespace Forest_collab
 {
     class TREE
     {
-        private string type;
-        private int age;
-        private bool diseased;
-        private bool dove;
-        private bool river;
-
-
-        public TREE(bool _diseased, bool _dove, bool _river)
+        private string GetType
         {
-            type = typeb();
-            age = ageb();
-            diseased = diseasedb();
+            get
+            {
+                int ratio = RandomNum(0, 4);
+                if (ratio == 0)
+                {
+                    return "Norway Spruce";
+                }
+                else
+                {
+                    return "Nordmann Fir";
+                }
+            }
+        }
+
+        private int GetAge
+        {
+            get
+            {
+                int age = RandomNum(1, 250);
+                return age;
+            }
+        }
+        private bool GetDiseased
+        {
+            get
+            {
+                int ratio = RandomNum(1, 200);
+                if (ratio == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        private bool dove { get; set; }
+        private bool river { get; set; }
+        public TREE(bool _dove, bool _river)
+        {
             dove = _dove;
             river = _river;
 
         }
-        public string typeb()
-        {
-            int Ran = RandomNum(0, 4);
-            bool Tree;
-            if (Ran == 0)
-            {
-                Tree = true;
-            }
-
-            else
-            {
-                Tree = false;
-            }
-
-            if (Tree = true)
-            {
-                type = "spruce";
-            }
-            else
-            {
-                type = "north tree";
-            }
-            return type;
-        }
-
-        public int ageb()
-        {
-            age = RandomNum(1, 250);
-            return age;
-        }
-
         public int RandomNum(int min, int max)
         {
             Random random = new Random();
             return random.Next(min, max);
         }
-
-        public bool diseasedb()
-        {
-            int ratio = RandomNum(1, 200);
-            bool disease;
-            if (ratio == 1)
-            {
-                disease = true;
-            }
-            else
-            {
-                disease = false;
-            }
-            return disease;
-        }
-    
-
     }
 }

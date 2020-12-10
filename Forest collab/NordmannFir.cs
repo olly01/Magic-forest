@@ -6,7 +6,7 @@ namespace Forest_collab
 {
     class NordmannFir : TREE
     {
-        public NordmannFir(bool _diseased, bool _dove, bool _river) : base(_diseased, _dove, _river)
+        public NordmannFir(bool _dove, bool _river) : base(_dove, _river)
         {
 
         }
