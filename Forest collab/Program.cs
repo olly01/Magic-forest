@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Forest_collab
 {
@@ -7,16 +8,22 @@ namespace Forest_collab
         static void Main(string[] args)
         {
             bool Disease = false;
-            int Random = RandomNum(0, 4);
             for (int i = 0; i < 9999; i++)
             {
-                if (Random == 0)
+                int Random = RandomNum(0, 4);
+                if (Random == 1)
                 {
-                    new NordmannFir(Doves(), River(), Diseased(Disease)); //SORT OUT THE RIVER THING 
+                    new NorwaySpruce(Doves(), River(), BugHotel(Disease), Diseased(Disease));
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("S");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 else
                 {
-                    new NorwaySpruce(Doves(), River(), BugHotel(Disease), Diseased(Disease));
+                    new NordmannFir(Doves(), River(), Diseased(Disease)); //SORT OUT THE RIVER THING 
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.Write("F");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
             }
         }
@@ -37,7 +44,7 @@ namespace Forest_collab
             int Num = RandomNum(0, 200);
             if (Num == 0)
             {
-                Disease = false;
+                Disease = true;
                 return true;
             }
             else
