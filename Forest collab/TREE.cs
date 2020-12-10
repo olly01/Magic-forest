@@ -24,19 +24,19 @@ namespace Forest_collab
         }
         public string typeb()
         {
-            int Blha = RandomNum(0, 4);
-            bool ryftg;
-            if (Blha == 0)
+            int Ran = RandomNum(0, 4);
+            bool Tree;
+            if (Ran == 0)
             {
-                ryftg = true;
+                Tree = true;
             }
 
             else
             {
-                ryftg = false;
+                Tree = false;
             }
 
-            if (ryftg = true)
+            if (Tree = true)
             {
                 type = "spruce";
             }
