@@ -10,7 +10,8 @@ namespace Forest_collab
         public int Age { get; set; }
         public Animals(int _population, int _age)
         {
-
+            Population = _population;
+            Age = _age;
         }
     }
 }
