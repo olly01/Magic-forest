@@ -9,20 +9,22 @@ namespace Forest_collab
         {
             int[] Rainfall = new int[] { 75, 55, 65, 55, 50, 55, 55, 70, 70, 100, 105, 90 };
             string[] CampingDays = new string[] { "May", "June", "September" };
-            int[] RiverDisplay = new int[] { 179, 180, 181, 182, 180, 181, 182, 183, 382, 383, 384, 385, 383, 384, 385, 386, 582, 583, 584, 585, 581, 582, 583, 584, 780, 781, 782, 783, 779, 780, 781, 978, 979, 980, 978, 979, 980, 1179, 1180, 1181, 1182, 1180, 1181, 1182, 1183, 1184, 1381, 1382, 1383, 1384, 1385, 1386, 1382, 1383, 1387, 1388, 1584, 1585, 1586, 1587, 1588, 1589, 1590, 1586, 1587, 1588, 1589, 1590, 1591, 1592, 1789, 1790, 1791, 1792, 1793, 1794, 1791, 1792, 1793, 1794, 1795, 1993, 1994, 1995, 1996, 1994, 1995, 1996, 1997, 2199, 2195, 2196, 2197, 2198, 2397, 2398, 2399, 2500, 2599, 2700, 2799, 2900 }; //Makes the river
+            // int[] RiverDisplay = new int[] { 179, 180, 181, 182, 180, 181, 182, 183, 382, 383, 384, 385, 383, 384, 385, 386, 582, 583, 584, 585, 581, 582, 583, 584, 780, 781, 782, 783, 779, 780, 781, 978, 979, 980, 978, 979, 980, 1179, 1180, 1181, 1182, 1180, 1181, 1182, 1183, 1184, 1381, 1382, 1383, 1384, 1385, 1386, 1382, 1383, 1387, 1388, 1584, 1585, 1586, 1587, 1588, 1589, 1590, 1586, 1587, 1588, 1589, 1590, 1591, 1592, 1789, 1790, 1791, 1792, 1793, 1794, 1791, 1792, 1793, 1794, 1795, 1993, 1994, 1995, 1996, 1994, 1995, 1996, 1997, 2199, 2195, 2196, 2197, 2198, 2397, 2398, 2399, 2500, 2599, 2700, 2799, 2900 }; //Makes the river
             bool Disease = false;
             string[] forest = new string[10099];
+            int[] Age = new int[10099];
             for (int i = 0; i < 10099; i++)
             {
                 int Random = RandomNum(0, 4);
                 if (Random == 1)
                 {
-                    new NorwaySpruce(Doves(), River(i, RiverDisplay), BugHotel(Disease), Diseased(Disease));
                     forest[i] = "S";
+                    AGETREE(Age, forest, i);
+                    new NorwaySpruce(Doves(), River(i, RiverDisplay), BugHotel(Disease), Diseased(Disease), Age[i]);
                 }
                 else
                 {
-                    new NordmannFir(Doves(), River(i, RiverDisplay), Diseased(Disease)); //SORT OUT THE RIVER THING 
+                    new NordmannFir(Doves(), River(i, RiverDisplay), Diseased(Disease), RandomNum(0, 1)); //SORT OUT THE RIVER THING 
                     forest[i] = "F";
                 }
             }
@@ -109,7 +111,10 @@ namespace Forest_collab
             }
             return river;
         }
-
+        static void AGETREE(int[] Age, string[] forest, int i)
+        {
+            RandomNum(10, 175);
+        }
         static bool Doves()
         {
             int Ran = RandomNum(0, 49);
