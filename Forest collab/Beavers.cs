@@ -6,7 +6,7 @@ namespace Forest_collab
 {
     class Beavers : Animals
     {
-        public int NumberEaten;
+        public int NumberEaten { get; set; }
         public Beavers(int _population, int _age) : base(_population, _age)
         {
 

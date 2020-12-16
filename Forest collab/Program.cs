@@ -9,11 +9,11 @@ namespace Forest_collab
         {
             int[] Rainfall = new int[] { 75, 55, 65, 55, 50, 55, 55, 70, 70, 100, 105, 90 };
             string[] CampingDays = new string[] { "May", "June", "September" };
-            // int[] RiverDisplay = new int[] { 179, 180, 181, 182, 180, 181, 182, 183, 382, 383, 384, 385, 383, 384, 385, 386, 582, 583, 584, 585, 581, 582, 583, 584, 780, 781, 782, 783, 779, 780, 781, 978, 979, 980, 978, 979, 980, 1179, 1180, 1181, 1182, 1180, 1181, 1182, 1183, 1184, 1381, 1382, 1383, 1384, 1385, 1386, 1382, 1383, 1387, 1388, 1584, 1585, 1586, 1587, 1588, 1589, 1590, 1586, 1587, 1588, 1589, 1590, 1591, 1592, 1789, 1790, 1791, 1792, 1793, 1794, 1791, 1792, 1793, 1794, 1795, 1993, 1994, 1995, 1996, 1994, 1995, 1996, 1997, 2199, 2195, 2196, 2197, 2198, 2397, 2398, 2399, 2500, 2599, 2700, 2799, 2900 }; //Makes the river
+            int[] RiverDisplay = new int[] { 79, 80, 81, 82, 180, 181, 182, 183, 282, 283, 284, 285, 383, 384, 385, 386, 482, 483, 484, 485, 581, 582, 583, 584, 680, 681, 682, 683, 779, 780, 781, 878, 879, 880, 978, 979, 980, 1079, 1080, 1081, 1082, 1180, 1181, 1182, 1183, 1184, 1281, 1282, 1283, 1284, 1285, 1286, 1382, 1383, 1387, 1388, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1586, 1587, 1588, 1589, 1590, 1591, 1592, 1689, 1690, 1691, 1692, 1693, 1694, 1791, 1792, 1793, 1794, 1795, 1893, 1894, 1895, 1896, 1994, 1995, 1996, 1997, 2099, 2095, 2096, 2097, 2098, 2197, 2198, 2199, 2200, 2299, 2300}; //Makes the river
             bool Disease = false;
-            string[] forest = new string[10099];
-            int[] Age = new int[10099];
-            for (int i = 0; i < 10099; i++)
+            string[] forest = new string[10201];
+            int[] Age = new int[10201];
+            for (int i = 0; i < 10201; i++)
             {
                 int Random = RandomNum(0, 4);
                 if (Random == 1)
@@ -28,7 +28,7 @@ namespace Forest_collab
                     forest[i] = "F";
                 }
             }
-            for (int i = 1; i < 2500; i++)
+            for (int i = 0; i < 3700; i++)
             {
                 for (int k = 0; k < 100; k++)
                 {
@@ -44,7 +44,7 @@ namespace Forest_collab
         {
             for (int j = 0; j < 24; j++)
             {
-                for (int k = 0; k < 9999; k++)
+                for (int k = 0; k < 10201; k++)
                 {
                     if (Doves() == true)
                     {
@@ -58,6 +58,11 @@ namespace Forest_collab
                         {
                             Console.Write(forest[k]);
                         }
+                    }
+                    else if (k == 100)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.Write(forest[k]);
                     }
                     else if (forest[k] == "F")
                     {
@@ -79,7 +84,7 @@ namespace Forest_collab
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.Write(forest[k]);
                     }
-                    if (k % 200 == 0)
+                    if (k % 100 == 0)
                     {
                         if (k == 0)
                         {
@@ -104,7 +109,7 @@ namespace Forest_collab
             bool river = false;
             for (int k = 1; k < 100; k++)
             {
-                if (RiverDisplay[k] == i - 1 || RiverDisplay[k] == i + 1 || i == 2399 || i == 2400)
+                if (RiverDisplay[k] == i - 1 || RiverDisplay[k] == i + 1 || i == 2399 || i == 2400 || i == 78 || RiverDisplay[k] == i + 100 || RiverDisplay[k] == i - 100) //identifies the trees 
                 {
                     river = true;
                 }

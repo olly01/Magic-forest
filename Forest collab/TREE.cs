@@ -17,10 +17,5 @@ namespace Forest_collab
             Diseased = _diseased;
             Age = _age;
         }
-        public int RandomNum(int min, int max)
-        {
-            Random random = new Random();
-            return random.Next(min, max);
-        }
     }
 }
